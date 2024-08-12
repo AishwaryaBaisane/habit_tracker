@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 
 import 'DataBase/habit_database.dart';
 import 'Screens/Home_Screen.dart';
+import 'Screens/Splash_Sceen.dart';
 import 'Themes/Theme_Provider.dart';
 
 Future<void> main() async {
@@ -36,7 +37,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Habit Tracker',
       debugShowCheckedModeBanner: false,
-      home: const HomeScreen(),
+      routes:
+      {
+        '/':(context)=>SplashSceen(),
+        '/home':(context)=>HomeScreen()
+      },
       theme: Provider.of<ThemeProvider>(context).themeData,
     );
   }
